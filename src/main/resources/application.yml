@@ -5,11 +5,13 @@ server:
   tomcat.uri-encoding: UTF-8
 
 spring:
+  #数据源
   datasource:
     url : jdbc:mysql://123.207.124.113:3306/SEproject
     username : admin
     password : mysql
     driverClassName : com.mysql.jdbc.Driver
+  #数据持久层
   jpa:
     database : MYSQL
     show-sql : true
@@ -19,10 +21,17 @@ spring:
     properties:
       hibernate:
         dialect : org.hibernate.dialect.MySQL5Dialect
+  #安全框架
   security:
     user:
       name: admin
       password: admin
+  #邮件发送
+  mail:
+    host: smtp.163.com
+    username: fateiceb@163.com
+    password: zq123456789
+
 #热部署
 devtools:
   restart:
