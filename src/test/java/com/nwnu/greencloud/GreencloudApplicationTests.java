@@ -28,20 +28,20 @@ public class GreencloudApplicationTests {
 	@Value("${spring.mail.username}")
 	private String Sender; //读取配置文件中的参数
 
-	@Test
-	public void sendSimpleMail() throws Exception {
-		MimeMessage message = null;
-		message = mailSender.createMimeMessage();
-		MimeMessageHelper helper = new MimeMessageHelper(message, true);
-		helper.setFrom(Sender);
-		helper.setTo("524633094@qq.com");
-		helper.setSubject("确认注册greencloud账号");
-		StringBuffer sb = new StringBuffer();
-		sb.append("<h1>如果不是您发的邮件，请不要点击下方链接</h1>")
-				.append("<href>www.baidu.com</href>");
-		helper.setText(sb.toString(), true);
-		mailSender.send(message);
-	}
+//	@Test
+//	public void sendSimpleMail() throws Exception {
+//		MimeMessage message = null;
+//		message = mailSender.createMimeMessage();
+//		MimeMessageHelper helper = new MimeMessageHelper(message, true);
+//		helper.setFrom(Sender);
+//		helper.setTo("524633094@qq.com");
+//		helper.setSubject("确认注册greencloud账号");
+//		StringBuffer sb = new StringBuffer();
+//		sb.append("<h1>如果不是您发的邮件，请不要点击下方链接</h1>")
+//				.append("<href>www.baidu.com</href>");
+//		helper.setText(sb.toString(), true);
+//		mailSender.send(message);
+//	}
 	@Test
 	public void contextLoads() {
 	}
