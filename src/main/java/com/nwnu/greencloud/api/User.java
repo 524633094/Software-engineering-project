@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+* @Author zhangqi
+* @Desccription: 用户信息api
+* @Date: 11:09 2018/5/5
+*/
 @RestController
 @RequestMapping(value = "/api")
 public class User {

@@ -11,6 +11,7 @@ public class UserEntity {
     private String username;
     private String password;
     private String apiKey;
+    private int state;
 
     @Id
     @Column(name = "id")
@@ -74,5 +75,15 @@ public class UserEntity {
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (apiKey != null ? apiKey.hashCode() : 0);
         return result;
+    }
+
+    @Basic
+    @Column(name = "state")
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
     }
 }
