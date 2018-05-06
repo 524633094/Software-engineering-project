@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="网站关键词">
+    <meta name="Description" content="网站介绍">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/reg.css">
+    <div th:include="conclude.html::con" ></div>
+</head>
+<body>
+    <div style="width: 600px;
+    margin: 0 auto;
+    margin-top: 50px;"> <a href=""><img src="img/banner.png" alt="" style="display: block;
+    height: auto;
+    max-height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;"> </a></div>
+    <div id="app" class="wrap">
+        <div class="wpn">
+            <div class="form-data pos">
+              
+                <form>
+                    <p class="tel-warn hide"><i class="icon-warn">密码错误</i></p>
+                    <p class="p-input pos">
+                        <label for="tel">邮箱</label>
+                        <input type="email" placeholder="" id="tel" autocomplete="off" v-model="emailadd">
+                        <span class="tel-warn tel-err hide"><em></em><i class="icon-warn"></i></span>
+                    </p>
+                    <!--<p class="p-input pos" id="sendcode">-->
+                        <!--<label for="veri-code">输入验证码</label>-->
+                        <!--<input type="number" id="veri-code">-->
+                        <!--<a href="javascript:;" class="send">发送验证码</a>-->
+                        <!--<span class="time hide"><em>120</em>s</span>-->
+                        <!--<span class="error hide"><em></em><i class="icon-warn" style="margin-left: 5px"></i></span>-->
+                    <!--</p>-->
+                    <p class="p-input pos " id="pwd">
+                        <label for="passport">输入密码</label>
+                        <input type="password"  placeholder="" style="display: none">
+                        <input type="password" v-model="pass" id="passport">
+                        <span class="tel-warn pwd-err hide"><em></em><i class="icon-warn" style="margin-left: 5px"></i></span>
+                    </p>
+                    <p class="p-input pos " id="confirmpwd">
+                        <label for="passport2">确认密码</label>
+                        <input type="password"  style="position:absolute;top:-998px">
+                        <input type="password" v-model="pass2" id="passport2">
+                        <span class="tel-warn confirmpwd-err hide"><em></em><i class="icon-warn" style="margin-left: 5px"></i></span>
+                    </p>
+                </form>
+                <!-- <div class="reg_checkboxline pos">
+                    <span class="z"><i class="icon-ok-sign boxcol" nullmsg="请同意!"></i></span>
+                    <input type="hidden" name="agree" value="1">
+                    <div class="Validform_checktip"></div>
+                    <p>我已阅读并接受 <a href="#" target="_brack">《XXXX协议说明》</a></p>
+                </div> -->
+                <button v-on:click="check(emailadd,pass,pass2)" class="lang-btn">注册{{emailadd}}</button>
+                <div class="bottom-info">已有账号，<a href="./index.html">马上登录</a></div>
+                
+                <p class="right">Powered by © 2018</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                emailadd:'',
+                pass:'',
+                pass2:'',
+            },
+            methods: {
+                say: function (message) {
+                    alert(message)
+                },
+                check:function (email,pass,pass2){
+                    var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+                    if(!reg.test(email)){
+                        layer.msg("邮箱错误");
+                        return;
+                    }
+                    if(pass != pass2){
+                       layer.msg("密码不匹配")
+                        return;
+                    }
+                    $.post(
+                        '/api/regist',{username:email,password:pass},function (data) {
+                            layer.msg("code:"+data['code']+","+"message:"+data['message']);
+                        }
+                    )
+                }
+            }
+
+        })
+
+    </script>
+    <script src="js/agree.js"></script>
+	<div style="text-align:center;">
+
+</div>
+</body>
+</html>

@@ -30,8 +30,8 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">ChartJS</li>
+              <li class="breadcrumb-item"><a href="home">主页</a></li>
+              <li class="breadcrumb-item active">可视化</li>
             </ol>
           </div>
         </div>
@@ -46,7 +46,7 @@
             <!-- AREA CHART -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Area Chart</h3>
+                <h3 class="card-title">设备A与设备B数据传输数量</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -66,7 +66,7 @@
             <!-- DONUT CHART -->
             <div class="card card-danger">
               <div class="card-header">
-                <h3 class="card-title">Donut Chart</h3>
+                <h3 class="card-title">设备发送数据总数量</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -87,7 +87,7 @@
             <!-- LINE CHART -->
             <div class="card card-info">
               <div class="card-header">
-                <h3 class="card-title">Line Chart</h3>
+                <h3 class="card-title">设备A与B的温度</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -107,7 +107,7 @@
             <!-- BAR CHART -->
             <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Bar Chart</h3>
+                <h3 class="card-title">条形图展示</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -173,7 +173,7 @@
     var areaChart       = new Chart(areaChartCanvas)
 
     var areaChartData = {
-      labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels  : ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期天'],
       datasets: [
         {
           label               : 'Electronics',
@@ -216,7 +216,7 @@
       //Number - Tension of the bezier curve between points
       bezierCurveTension      : 0.3,
       //Boolean - Whether to show a dot for each point
-      pointDot                : false,
+      pointDot                : true,
       //Number - Radius of each point dot in pixels
       pointDotRadius          : 4,
       //Number - Pixel width of point dot stroke
@@ -260,37 +260,37 @@
         value    : 700,
         color    : '#f56954',
         highlight: '#f56954',
-        label    : 'Chrome'
+        label    : 'A'
       },
       {
         value    : 500,
         color    : '#00a65a',
         highlight: '#00a65a',
-        label    : 'IE'
+        label    : 'B'
       },
       {
         value    : 400,
         color    : '#f39c12',
         highlight: '#f39c12',
-        label    : 'FireFox'
+        label    : 'C'
       },
       {
         value    : 600,
         color    : '#00c0ef',
         highlight: '#00c0ef',
-        label    : 'Safari'
+        label    : 'D'
       },
       {
         value    : 300,
         color    : '#3c8dbc',
         highlight: '#3c8dbc',
-        label    : 'Opera'
+        label    : 'E'
       },
       {
         value    : 100,
         color    : '#d2d6de',
         highlight: '#d2d6de',
-        label    : 'Navigator'
+        label    : 'F'
       }
     ]
     var pieOptions     = {

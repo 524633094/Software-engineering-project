@@ -5,6 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+* @Author zhangqi
+* @Desccription: 页面路由
+* @Date: 14:40 2018/5/6
+*/
 @Controller
 @RequestMapping("/page")
 public class AdminController {
@@ -25,14 +30,21 @@ public class AdminController {
     public String getMap(){
         return "inline";
     }
-
-    @GetMapping("/index.html")
-    public String getIndex1(){
+    @GetMapping("/login")
+    public String getLogin(){
         return "index";
     }
-    @GetMapping("/index2.html")
-    public String getIndex2(){
-        return "index2";
+    @GetMapping("/reg.html")
+    public String getReg(){
+        return "reg";
+    }
+    @GetMapping("/index.html")
+    public String getIndex(){
+        return "index";
+    }
+    @GetMapping("/getpass.html")
+    public String getPass(){
+        return "getpass";
     }
     @GetMapping("/index3.html")
     public String getIndex3(){
