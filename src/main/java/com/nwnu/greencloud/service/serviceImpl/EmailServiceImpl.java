@@ -25,7 +25,7 @@ public class EmailServiceImpl implements EmailService {
     private JavaMailSender mailSender;
     @Value("${spring.mail.username}")
     private  String sender;
-    private static final String PREFIX = "http://localhost:8080/api/registdouble/";
+    private static final String PREFIX = "http://123.207.124.113:8080/api/registdouble/";
     public Boolean sendRegistEmail(String receiver){
         try{
         MimeMessage message = null;
@@ -36,7 +36,7 @@ public class EmailServiceImpl implements EmailService {
 		helper.setSubject("确认注册greencloud账号");
 		StringBuffer sb = new StringBuffer();
 		String apikey = userRepository.findByUsername(receiver).getApiKey();
-		sb.append("<h1>如果不是您发的邮件，请不要点击下方链接</h1>")
+		sb.append("<h1>如果不是您发的邮件，请不要点击下方链接，复制下方地址到浏览器完成注册</h1>")
 				.append("<href>"+PREFIX+apikey+"</href>");
 		helper.setText(sb.toString(), true);
 		mailSender.send(message);
