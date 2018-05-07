@@ -16,7 +16,7 @@ public class AdminController {
     @LoggerManage(description = "主页面")
     @GetMapping("/home")
     public String getHome(){
-        return "index3";
+        return "greencloud";
     }
     @GetMapping("/widgets.html")
     public String getEquip(){

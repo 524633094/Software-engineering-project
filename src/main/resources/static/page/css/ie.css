@@ -1,0 +1,447 @@
+body{
+    min-width: 1400px;
+}
+.head {
+    height: 100px;
+    background: #fff;
+}
+
+.su {
+    width: 1px;
+    height: 15px;
+    margin-left: 29px;
+    margin-top: 45px;
+}
+
+.head-hua {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1)
+}
+
+.logo {
+    height: 100px;
+}
+
+.logo img {
+    padding: 30px;
+    width: 200px;
+}
+
+.nav {
+    margin-left: 270px;
+    width: 800px;
+}
+
+.nav ul li {
+    font-size: 17px;
+    width: 140px;
+}
+
+.nav ul li a {
+    width: 70px;
+    line-height: 100px;
+}
+
+.nav ul li .nav-active {
+    padding-bottom: 10px;
+}
+
+.phone {
+    height: 100px;
+    line-height: 100px;
+    padding-right: 50px;
+    font-size: 24px;
+}
+
+.phone img {
+    width: 20px;
+}
+
+#about {
+    margin-top: 100px;
+}
+
+.carousel-indicators .active {
+    height: 4px;
+}
+
+.carousel-indicators li {
+    height: 2px;
+    margin: 1px;
+    text-indent: -999px;
+}
+
+.carousel-indicators {
+    bottom: 60px;
+}
+
+#service ul li {
+    width: 25%;
+}
+
+.service1,
+.service2,
+.service3,
+.service4 {
+    height: 100px;
+    line-height: 100px;
+}
+
+.service-span {
+    font-size: 24px;
+    margin-top: -155px;
+}
+
+.service-icon {
+    width: 40px;
+}
+
+.service-content {
+    font-size: 15px;
+    padding-bottom: 40px;
+    padding-top: 20px;
+}
+
+.service-content span {
+    padding-top: 20px;
+}
+
+.shadow {
+    width: 50px;
+}
+
+.text-desc span {
+    font-size: 24px;
+}
+
+
+/*轮播图片*/
+
+#case {
+    padding: 30px 0;
+}
+
+.third-content {
+    padding:30px 0;
+}
+
+.third-content span {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.third-content p {
+    font-size: 16px;
+}
+
+#slide {
+    width: 750px;
+    height: 600px;
+    margin-top: 30px;
+}
+
+#slide li {
+    width: 76px;
+    box-shadow: 0 0 80px #f1f1f1;
+    border: 1px solid #ccc;
+}
+
+.arrow .prev,
+.arrow .next {
+    width: 64px;
+    font-size: 96px;
+    font: 700 96px;
+    display: none;
+}
+
+.arrow .prev {
+    left: -300px;
+    top: 300px;
+}
+
+.arrow .next {
+    right: -300px;
+    top: 300px;
+}
+
+.prodct-content {
+    width: 500px;
+    padding: 150px 0 0 100px;
+}
+
+.prodct-content span:first-child {
+    font-size: 30px;
+}
+
+.time {
+    font-size: 14px;
+    width: 200px;
+    margin-top: 50px;
+}
+
+.hr1 {
+    width: 100px;
+    height: 3px;
+    margin: 40px 0;
+}
+
+.hr2 {
+    width: 150px;
+    height:3px;
+    margin: 40px 0;
+}
+
+.hr3 {
+    width: 200px;
+    height: 1px;
+    margin-top: 41px;
+}
+
+.prodct-content p {
+    font-size: 16px;
+    line-height: 50px;
+}
+
+.list ul {
+    width: 512px;
+    margin: 50px auto;
+}
+
+.product-banner {
+    width: 100px;
+    margin: 2px
+}
+
+.fourth-content {
+    margin-left: 300px;
+    width: 400px;
+    margin-top: 200px;
+}
+
+.fourth-content h1 {
+    font-size: 35px;
+}
+
+.fourth-img {
+    width: 800px;
+}
+
+.fourth-title {
+    margin: 60px 0 20px 30px;
+    font-size: 25px;
+}
+
+.fourth-content p {
+    font-size: 15px;
+    text-indent: 50px;
+}
+
+.fourth-btn {
+    width: 250px;
+    padding: 20px 40px;
+    border: 1px solid #bcbcbc;
+    font-size: 18px;
+    border-radius: 120px;
+    margin-top: 100px;
+}
+
+.fourth-btn img {
+    margin-left: 20px;
+}
+
+#contact ul li {
+    height: 350px;
+    line-height: 350px;
+    margin-left: 80px;
+}
+
+#contact ul {
+    margin-left: 200px;
+}
+
+#contact ul li h1 {
+    height: 350px;
+    line-height: 350px;
+    font-size: 35px;
+}
+
+#contact ul li span {
+    font-size: 14px;
+}
+
+.erweima img {
+    margin-top: 30px;
+}
+
+#contact ul li .erweima span {
+    padding-top: 100px;
+    font-size: 20px
+}
+
+#footer {
+    height: 80px;
+    line-height:80px;
+    font-size: 14px;
+}
+/*page*/
+.ai-banner{
+    padding-top: 100px;
+}
+.lang-cloud {
+    padding-bottom: 65px;
+}
+
+.lang-cloud h1 {
+    font-size: 35px;
+    margin-top: 50px;
+}
+
+.title {
+    margin-top:15px;
+    font-size: 16px;
+}
+
+.lang-cloud ul {
+    width: 1210px;
+    margin-top: 30px;
+}
+
+.lang-cloud ul li {
+    width: 160px;
+    margin-left: 50px;
+}
+
+.lang-cloud ul li:first-child {
+    margin-left: 0px;
+}
+
+.yuyi {
+    font-size: 18px;
+    margin-top: 40px;
+}
+
+.ai1-bg,
+.ai2-bg,
+.ai3-bg,
+.ai4-bg,
+.ai5-bg,
+.ai6-bg {
+    margin-top: 40px;
+    width: 165px;
+    height: 185px;
+}
+
+.ai1:hover,
+.ai2:hover,
+.ai3:hover,
+.ai4:hover,
+.ai5:hover,
+.ai6:hover {
+    margin-top: -20px;
+}
+
+
+.why-analysis {
+    padding: 125px 300px 0 300px;
+}
+
+.why-l {
+    width: 50%;
+}
+
+.why-l h1 {
+    padding-bottom: 30px;
+    font-size: 35px;
+}
+
+.why-l p {
+    font-size: 15px;
+    padding-bottom: 25px;
+}
+
+.why-l ul li {
+    font-size:15px;
+}
+
+.why-l ul li font,
+.ltp-help ul li font {
+    padding-right: 5px;
+}
+
+.why-analysis img {
+    margin-top: -125px;
+}
+
+.ltp-r h1 {
+    padding-bottom: 30px;
+    font-size: 35px;
+    padding-top: 30px;
+}
+
+.ltp-platform {
+    padding: 105px 300px 85px 300px;
+}
+
+.ltp-platform img {
+    height: 330px;
+}
+.ltp-r span {
+    font-size: 15px;
+    margin-top: 50px;
+}
+
+.ltp-r p {
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+.ltp-help {
+    padding: 130px 300px;
+    background: #f5f5f5;
+    position: relative;
+    height: 480px;
+}
+
+.ltp-help h1 {
+    padding-bottom: 80px;
+    font-size: 35px;
+}
+
+.ltp-help ul li {
+    font-size: 15px;
+}
+
+.ltp-help img {
+    right: 80px;
+    height: 480px
+}
+.who-ltp {
+    padding: 0 300px;
+}
+
+.who-ltp h1 {
+    padding-top: 55px;
+    font-size: 35px;
+}
+
+.who-ltp span {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.who-ltp ul {
+    padding: 60px 0;
+}
+
+.who-ltp ul li {
+    height: 140px;
+    width: 195px;
+}
+
+.who-ltp ul li img {
+    width: 175px;
+    padding: 30px;
+    margin-top: 18px;
+}
+.who-ltp ul li:hover {
+    background: #f2f2f2;
+}

@@ -92,7 +92,7 @@
                         '/api/login',{username:email,password:pass},function (data) {
                             layer.msg("code:"+data['code']+","+"message:"+data['message']);
                             if(data['code'] == "10002"){
-                                window.location = "home"
+                                window.location = "index3.html"
                             }
                         }
                     )
