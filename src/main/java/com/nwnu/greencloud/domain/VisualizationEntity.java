@@ -1,8 +1,11 @@
 package com.nwnu.greencloud.domain;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "visualization", schema = "SEproject", catalog = "")
+@ToString
 public class VisualizationEntity {
     private String devId;
     private String sensorOne;

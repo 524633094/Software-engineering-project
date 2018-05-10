@@ -26,6 +26,7 @@ public class EmailServiceImpl implements EmailService {
     @Value("${spring.mail.username}")
     private  String sender;
     private static final String PREFIX = "http://123.207.124.113:8080/api/registdouble/";
+
     public Boolean sendRegistEmail(String receiver){
         try{
         MimeMessage message = null;
