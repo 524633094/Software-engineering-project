@@ -5,6 +5,7 @@ import com.nwnu.greencloud.domain.UserEntity;
 import com.nwnu.greencloud.repository.UserRepository;
 import com.nwnu.greencloud.service.EmailService;
 import com.nwnu.greencloud.service.UserService;
+import com.nwnu.greencloud.util.UuidUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +30,7 @@ public class UserServiceImpl  implements UserService{
         userEntity = new UserEntity();
         userEntity.setUsername(username);
         userEntity.setPassword(password);
-        String uuid = UUID.randomUUID().toString().replace("-", "");
+        String uuid = UuidUtil.generateUuid();
         userEntity.setApiKey(uuid);
         userEntity.setState(UserStateEnum.UNACTIVATE.getState());
         userRepository.save(userEntity);
