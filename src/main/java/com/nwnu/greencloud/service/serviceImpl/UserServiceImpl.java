@@ -61,4 +61,12 @@ public class UserServiceImpl  implements UserService{
         userRepository.save(userEntity);
         return true;
     }
+
+    @Override
+    public Boolean checkUserApiKey(String apikey) {
+        if(userRepository.findByApiKey(apikey) != null){
+            return true;
+        }
+        return false;
+    }
 }

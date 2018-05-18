@@ -6,11 +6,14 @@ import com.nwnu.greencloud.repository.DevRepository;
 import com.nwnu.greencloud.repository.UserRepository;
 import com.nwnu.greencloud.service.DevService;
 import com.nwnu.greencloud.util.UuidUtil;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ThreadPoolExecutor;
 
 @Service
 public class DevServiceImpl implements DevService {
@@ -22,7 +25,8 @@ public class DevServiceImpl implements DevService {
     @Override
     public Boolean addDev(DevEntity devEntity) {
         String devName = devEntity.getDevName();
-        DevEntity formerDev = devRepository.findByDevName(devName);
+        String apiKey = devEntity.getApiKey();
+        DevEntity formerDev = devRepository.findByDevNameAndApiKey(devName,devEntity.getApiKey());
         if( formerDev != null){
             return false;
         }

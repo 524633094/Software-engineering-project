@@ -14,4 +14,5 @@ public interface UserService {
     Boolean login(String username, String password, HttpSession session);
     //注册邮箱确认
     Boolean registerDouble(String apikey);
+    Boolean checkUserApiKey(String apikey);
 }

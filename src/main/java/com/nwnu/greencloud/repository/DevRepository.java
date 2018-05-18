@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface DevRepository extends JpaRepository<DevEntity,String> {
     DevEntity findByDevName(@Param("devname") String devname);
+    DevEntity findByDevNameAndApiKey(@Param("devname") String devname,@Param("apikey") String apikey);
 }
