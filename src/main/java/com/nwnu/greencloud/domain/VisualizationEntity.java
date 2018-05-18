@@ -13,8 +13,9 @@ public class VisualizationEntity {
     private String sensorThree;
     private String sensorFour;
     private String sensorFive;
+    private int id;
 
-    @Id
+    @Basic
     @Column(name = "dev_id")
     public String getDevId() {
         return devId;
@@ -100,5 +101,15 @@ public class VisualizationEntity {
         result = 31 * result + (sensorFour != null ? sensorFour.hashCode() : 0);
         result = 31 * result + (sensorFive != null ? sensorFive.hashCode() : 0);
         return result;
+    }
+
+    @Id
+    @Column(name = "id")
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -1,5 +1,6 @@
 package com.nwnu.greencloud.service.serviceImpl;
 
+import com.nwnu.greencloud.api.Dev;
 import com.nwnu.greencloud.domain.DevEntity;
 import com.nwnu.greencloud.repository.DevRepository;
 import com.nwnu.greencloud.repository.UserRepository;
@@ -21,8 +22,9 @@ public class DevServiceImpl implements DevService {
     @Override
     public Boolean addDev(DevEntity devEntity) {
         String devName = devEntity.getDevName();
-        if(devRepository.findByDevName(devName) != null){
-            updateDev(devEntity);
+        DevEntity formerDev = devRepository.findByDevName(devName);
+        if( formerDev != null){
+            return false;
         }
         devEntity.setId(UuidUtil.generateUuid());
         devRepository.save(devEntity);
@@ -35,9 +37,11 @@ public class DevServiceImpl implements DevService {
     }
 
     @Override
-    public Boolean updateDev(DevEntity devEntity) {
+    public Boolean updateDev(DevEntity devEntity,DevEntity formerDev) {
 
-        return null;
+        devEntity.setId(formerDev.getId());
+        devRepository.save(devEntity);
+        return true;
     }
 
     @Override

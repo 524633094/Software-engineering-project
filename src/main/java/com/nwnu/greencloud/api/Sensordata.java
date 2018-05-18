@@ -1,7 +1,9 @@
 package com.nwnu.greencloud.api;
 import com.nwnu.greencloud.api.apimodel.SensorDataModel;
 import com.nwnu.greencloud.common.reply.Reply;
+import com.nwnu.greencloud.service.SensorService;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,15 +17,20 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping(value = "/api")
 public class Sensordata {
-    @PostMapping(value = "/tensor/{apikey}")
+    @Autowired
+    private SensorService sensorService;
+    @PostMapping(value = "/sensor/{apikey}")
     public Reply postTensorData(@PathVariable(value = "apikey") String apikey, @RequestBody SensorDataModel tensorDataModel, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return new Reply(20005,"参数错误");
         }
         log.info(tensorDataModel.toString());
+        if(!sensorService.saveSensorsData(tensorDataModel,apikey)){
+            return new Reply(20009,"apikey不匹配");
+        }
         return new Reply(10005,"成功传输");
     }
-    @PostMapping(value = "/tensor")
+    @PostMapping(value = "/sensor")
     public Reply postTensorHeader(HttpServletRequest httpServletRequest){
             log.info(httpServletRequest.getRequestURL());
             log.info(httpServletRequest.getCookies().length);

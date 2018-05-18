@@ -6,7 +6,7 @@
   <session-factory>
     <property name="connection.url">jdbc:mysql://123.207.124.113:3306/SEproject</property>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-    <mapping class="com.nwnu.greencloud.domain.DevEntity"/>
+      <mapping class="com.nwnu.greencloud.domain.DevEntity"/>
     <mapping class="com.nwnu.greencloud.domain.UserEntity"/>
     <mapping class="com.nwnu.greencloud.domain.VisualizationEntity"/>
     <!-- <property name="connection.username"/> -->

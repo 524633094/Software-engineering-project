@@ -8,5 +8,6 @@ import com.nwnu.greencloud.api.apimodel.SensorDataModel;
 * @Date: 11:29 2018/5/10
 */
 public interface SensorService {
-    Boolean saveSensorsData(SensorDataModel sensorDataModel);
+    Boolean saveSensorsData(SensorDataModel sensorDataModel,String apiKey);
+    Boolean checkApi(String devName,String apiKey);
 }
