@@ -19,7 +19,6 @@ import javax.mail.internet.MimeMessage;
 @SpringBootTest
 @ActiveProfiles("163")
 public class GreencloudApplicationTests {
-
 	@Autowired
 	UserRepository userRepository;
 	@Autowired
@@ -44,6 +43,7 @@ public class GreencloudApplicationTests {
 //	}
 	@Test
 	public void contextLoads() {
+
 	}
 
 	@Test

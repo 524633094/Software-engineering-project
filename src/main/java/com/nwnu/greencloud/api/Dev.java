@@ -1,5 +1,6 @@
 package com.nwnu.greencloud.api;
 
+import com.nwnu.greencloud.common.aop.LoggerManage;
 import com.nwnu.greencloud.common.reply.Reply;
 import com.nwnu.greencloud.domain.DevEntity;
 import com.nwnu.greencloud.service.serviceImpl.DevServiceImpl;
@@ -15,6 +16,7 @@ public class Dev {
     private  DevServiceImpl devService;
     @Autowired
     private UserServiceImpl userService;
+    @LoggerManage(description = "用户添加设备")
     @PostMapping(value = "/dev/{apikey}")
     public Reply addDev(@PathVariable(value = "apikey") String apikey, @RequestBody DevEntity devEntity, BindingResult bindingResult){
         devEntity.setApiKey(apikey);

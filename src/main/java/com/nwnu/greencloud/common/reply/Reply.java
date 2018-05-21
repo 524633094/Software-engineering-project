@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
+import java.util.List;
+
 /**
 * @Author zhangqi
 * @Desccription: controller应答
@@ -14,13 +16,22 @@ import lombok.extern.log4j.Log4j2;
 */
 @Log4j2
 @Data
-@AllArgsConstructor
-public class Reply {
+public class Reply<T>{
     private int code;
     private String message;
+    private List<T> list;
     public Reply(ExceptionEnum ex){
         this.code = ex.getCode();
         this.message = ex.getInfo();
+    }
+    public Reply(int code,String message){
+        this.code = code;
+        this.message = message;
+    }
+    public Reply(int code,String message,List<T> list){
+        this.code = code;
+        this.message = message;
+        this.list = list;
     }
 
 }

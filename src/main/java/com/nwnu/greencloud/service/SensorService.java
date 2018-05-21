@@ -1,6 +1,9 @@
 package com.nwnu.greencloud.service;
 
 import com.nwnu.greencloud.api.apimodel.SensorDataModel;
+import com.nwnu.greencloud.domain.VisualizationEntity;
+
+import java.util.List;
 
 /**
 * @Author zhangqi
@@ -10,4 +13,5 @@ import com.nwnu.greencloud.api.apimodel.SensorDataModel;
 public interface SensorService {
     Boolean saveSensorsData(SensorDataModel sensorDataModel,String apiKey);
     Boolean checkApi(String devName,String apiKey);
+    List<VisualizationEntity> getSensorDataByDevName(String devName);
 }

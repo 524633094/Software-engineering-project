@@ -9,6 +9,8 @@ import com.nwnu.greencloud.service.SensorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SensorServiceImpl implements SensorService {
     @Autowired
@@ -43,5 +45,15 @@ public class SensorServiceImpl implements SensorService {
             }
         }
         return false;
+    }
+
+    @Override
+    public List<VisualizationEntity> getSensorDataByDevName(String devName) {
+        DevEntity devEntity = devRepository.findByDevName(devName);
+        List<VisualizationEntity> dataList = null;
+        if(devEntity != null){
+            dataList = visualizationRepository.findAllByDevId(devEntity.getId());
+        }
+        return dataList;
     }
 }
