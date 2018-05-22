@@ -9,7 +9,8 @@
       <mapping class="com.nwnu.greencloud.domain.DevEntity"/>
     <mapping class="com.nwnu.greencloud.domain.UserEntity"/>
     <mapping class="com.nwnu.greencloud.domain.VisualizationEntity"/>
-    <!-- <property name="connection.username"/> -->
+      <mapping class="com.nwnu.greencloud.domain.AutomationEntity"/>
+      <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
     <!-- DB schema will be updated if needed -->

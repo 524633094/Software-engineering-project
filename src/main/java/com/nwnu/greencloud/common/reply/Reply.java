@@ -20,6 +20,7 @@ public class Reply<T>{
     private int code;
     private String message;
     private List<T> list;
+    private T data;
     public Reply(ExceptionEnum ex){
         this.code = ex.getCode();
         this.message = ex.getInfo();
@@ -32,6 +33,11 @@ public class Reply<T>{
         this.code = code;
         this.message = message;
         this.list = list;
+    }
+    public Reply(int code,String message,T data){
+        this.code = code;
+        this.message = message;
+        this.data = data;
     }
 
 }

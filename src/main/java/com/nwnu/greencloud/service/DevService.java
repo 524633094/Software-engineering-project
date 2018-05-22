@@ -14,6 +14,7 @@ public interface DevService {
     Boolean deleteDev(String devName);
     Boolean updateDev(DevEntity devEntity,DevEntity formerDev);
     List<DevEntity> listDev(String username);
+    String getDevId(String apiKey,String devName);
 
 
 }

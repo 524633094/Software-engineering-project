@@ -48,8 +48,14 @@ public class DevServiceImpl implements DevService {
         return true;
     }
 
+
     @Override
     public List<DevEntity> listDev(String username) {
         return null;
+    }
+
+    @Override
+    public String getDevId(String apiKey, String devName) {
+        return devRepository.findByDevNameAndApiKey(devName,apiKey).getId();
     }
 }
