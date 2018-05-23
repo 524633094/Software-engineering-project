@@ -45,13 +45,13 @@ public class Sensordata {
         return new Reply(10005,"成功传输");
     }
 
-    @GetMapping(value = "/data/{apikey}/{devname}")
+    @GetMapping(value = "/sensor/data/{apikey}/{devname}")
     public Reply getSensorData(@PathVariable(value = "apikey") String apikey,
                                @PathVariable(value = "devname") String devname){
         if(userService.checkUserApiKey(apikey) == false){
             return new Reply(20009,"apikey不匹配");
         }
-        return new Reply(10006,"传输成功",sensorService.getSensorDataByDevName(devname));
+        return new Reply(10006,"传输成功",sensorService.getSensorDataByDevName(devname,apikey));
 
     }
 

@@ -6,12 +6,14 @@ import com.nwnu.greencloud.domain.VisualizationEntity;
 import com.nwnu.greencloud.repository.DevRepository;
 import com.nwnu.greencloud.repository.VisualizationRepository;
 import com.nwnu.greencloud.service.SensorService;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Log4j2
 public class SensorServiceImpl implements SensorService {
     @Autowired
     private VisualizationRepository visualizationRepository;
@@ -21,7 +23,7 @@ public class SensorServiceImpl implements SensorService {
     public Boolean saveSensorsData(SensorDataModel sensorDataModel,String apiKey) {
         if(checkApi(sensorDataModel.getDevName(),apiKey)){
             VisualizationEntity visualizationEntity = new VisualizationEntity();
-            DevEntity devEntity = devRepository.findByDevName(sensorDataModel.getDevName());
+            DevEntity devEntity = devRepository.findByDevNameAndApiKey(sensorDataModel.getDevName(),apiKey);
             visualizationEntity.setDevId(devEntity.getId());
             visualizationEntity.setSensorOne(sensorDataModel.getSensorOne());
             visualizationEntity.setSensorTwo(sensorDataModel.getSensorTwo());
@@ -37,19 +39,17 @@ public class SensorServiceImpl implements SensorService {
 
     @Override
     public Boolean checkApi(String devName,String apiKey) {
-        DevEntity devEntity = devRepository.findByDevName(devName);
+        log.info(devName+apiKey);
+        DevEntity devEntity = devRepository.findByDevNameAndApiKey(devName,apiKey);
         if (devEntity != null){
-            String devApiKey = devEntity.getApiKey();
-            if(devApiKey != null && devApiKey.equals(apiKey)){
                 return true;
-            }
         }
         return false;
     }
 
     @Override
-    public List<VisualizationEntity> getSensorDataByDevName(String devName) {
-        DevEntity devEntity = devRepository.findByDevName(devName);
+    public List<VisualizationEntity> getSensorDataByDevName(String devName,String apiKey) {
+        DevEntity devEntity = devRepository.findByDevNameAndApiKey(devName,apiKey);
         List<VisualizationEntity> dataList = null;
         if(devEntity != null){
             dataList = visualizationRepository.findAllByDevId(devEntity.getId());
