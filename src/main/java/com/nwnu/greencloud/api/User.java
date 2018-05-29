@@ -23,7 +23,8 @@ import java.util.List;
 public class User {
     @Autowired
     private UserService userService;
-
+    @Autowired
+    private UserRepository userRepository;
     @LoggerManage(description = "注册")
     @PostMapping("/regist")
     public Reply regist(@RequestParam("username")String username,@RequestParam("password")String password){
@@ -53,6 +54,10 @@ public class User {
         }
         return new Reply(10002,"登录成功");
 
+    }
+    @GetMapping(value = "/user/{username}")
+    public Reply getUserInfo(@PathVariable(value = "username") String username){
+        return new Reply(10009,"获取用户信息",userRepository.findByUsername(username));
     }
 
 }
