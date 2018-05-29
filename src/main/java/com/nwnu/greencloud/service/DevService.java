@@ -13,7 +13,7 @@ public interface DevService {
     Boolean addDev(DevEntity devEntity);
     Boolean deleteDev(String devName);
     Boolean updateDev(DevEntity devEntity,DevEntity formerDev);
-    List<DevEntity> listDev(String username);
+    List<DevEntity> listDev(String apikey);
     String getDevId(String apiKey,String devName);
 
 

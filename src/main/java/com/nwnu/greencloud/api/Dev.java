@@ -29,4 +29,10 @@ public class Dev {
 
         return new Reply(20008,"添加设备失败,设备名重复");
     }
+
+    @GetMapping(value = "/user/dev/{apikey}")
+    public Reply dev(@PathVariable(value = "apikey") String apiKey){
+
+        return new Reply(10010,"获取用户设备信息",devService.listDev(apiKey));
+    }
 }

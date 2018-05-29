@@ -13,5 +13,6 @@ import java.util.List;
 public interface SensorService {
     Boolean saveSensorsData(SensorDataModel sensorDataModel,String apiKey);
     Boolean checkApi(String devName,String apiKey);
-    List<VisualizationEntity> getSensorDataByDevName(String devName,String apiKey);
+    List<VisualizationEntity> getSensorDataByDevNameAndApiKey(String devName,String apiKey);
+    List<VisualizationEntity> getSensoNumData(String apiKey,String devName,String num);
 }

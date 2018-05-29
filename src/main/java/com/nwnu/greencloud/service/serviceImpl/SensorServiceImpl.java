@@ -10,6 +10,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -48,12 +49,26 @@ public class SensorServiceImpl implements SensorService {
     }
 
     @Override
-    public List<VisualizationEntity> getSensorDataByDevName(String devName,String apiKey) {
+    public List<VisualizationEntity> getSensorDataByDevNameAndApiKey(String devName,String apiKey) {
         DevEntity devEntity = devRepository.findByDevNameAndApiKey(devName,apiKey);
         List<VisualizationEntity> dataList = null;
         if(devEntity != null){
             dataList = visualizationRepository.findAllByDevId(devEntity.getId());
         }
         return dataList;
+    }
+
+    @Override
+    public List<VisualizationEntity> getSensoNumData(String apiKey, String devName, String num) {
+        List<VisualizationEntity> visualizationEntities = getSensorDataByDevNameAndApiKey(devName,apiKey);
+        List<VisualizationEntity> newVilist = new ArrayList<>();
+        int number = Integer.valueOf(num);
+        if(visualizationEntities.size() < number){
+            return null;
+        }
+        for (int i = visualizationEntities.size() - 1 ;i >visualizationEntities.size()-number-1;i--){
+            newVilist.add(visualizationEntities.get(i));
+        }
+        return newVilist;
     }
 }

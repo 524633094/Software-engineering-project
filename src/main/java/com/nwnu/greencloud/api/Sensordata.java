@@ -7,6 +7,7 @@ import com.nwnu.greencloud.service.UserService;
 import com.nwnu.greencloud.service.serviceImpl.UserServiceImpl;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -51,7 +52,15 @@ public class Sensordata {
         if(userService.checkUserApiKey(apikey) == false){
             return new Reply(20009,"apikey不匹配");
         }
-        return new Reply(10006,"传输成功",sensorService.getSensorDataByDevName(devname,apikey));
+        return new Reply(10006,"传输成功",sensorService.getSensorDataByDevNameAndApiKey(devname,apikey));
+
+    }
+
+    @GetMapping(value = "/sensor/data/{apikey}/{devname}/{num}")
+    public Reply getNumSensorData(@PathVariable(value = "apikey")String apikey,
+                                  @PathVariable(value = "devname")String devname,
+                                  @PathVariable(value = "num")String num){
+        return new Reply(10012,"获取任意数量数据",sensorService.getSensoNumData(apikey,devname,num));
 
     }
 

@@ -50,8 +50,8 @@ public class DevServiceImpl implements DevService {
 
 
     @Override
-    public List<DevEntity> listDev(String username) {
-        return null;
+    public List<DevEntity> listDev(String apikey) {
+        return devRepository.findByApiKey(apikey);
     }
 
     @Override
