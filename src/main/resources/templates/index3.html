@@ -115,83 +115,25 @@ to get the desired effect
                   <thead>
                   <tr>
                     <th>设备名称</th>
-                    <th>传感器数量</th>
-                    <th>价格</th>
+                    <th>传感器1</th>
+                    <th>传感器2</th>
+                    <th>传感器3</th>
+                    <th>传感器4</th>
+                    <th>传感器5</th>
                     <th>更多信息</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>
+                  <tr th:each="dev:${devlist}" >
+                    <td  th:text="${dev.devName}">
                       <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                     树莓派
+                      树莓派
                     </td>
-                    <td>3</td>
-                    <td>
-                      <small class="text-success mr-1">
-                        <!--<i class="fa fa-arrow-up"></i>-->
-                        <!--50元-->
-                      </small>
-                      50元
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fa fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                      Arduino
-                    </td>
-                    <td>3</td>
-                    <td>
-                      <small class="text-warning mr-1">
-                        <!--<i class="fa fa-arrow-down"></i>-->
-                        <!--0.5%-->
-                      </small>
-                      30元
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fa fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                     Arduino uno
-                    </td>
-                    <td>1</td>
-                    <td>
-                      <small class="text-danger mr-1">
-                        <!--<i class="fa fa-arrow-down"></i>-->
-                        <!--3%-->
-                      </small>
-                     20元
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fa fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                      树莓派zero
-                      <span class="badge bg-danger">NEW</span>
-                    </td>
-                    <td>4</td>
-                    <td>
-                      <small class="text-success mr-1">
-                        <!--<i class="fa fa-arrow-up"></i>-->
-                        <!--63%-->
-                      </small>
-                      100元
-                    </td>
+                    <td th:text="${dev.sensorOne}">3</td>
+                    <td th:text="${dev.sensorTwo}">3</td>
+                    <td th:text="${dev.sensorThree}">3</td>
+                    <td th:text="${dev.sensorFour}">3</td>
+                    <td th:text="${dev.sensorFive}">3</td>
                     <td>
                       <a href="#" class="text-muted">
                         <i class="fa fa-search"></i>
