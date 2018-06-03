@@ -10,6 +10,7 @@
     <mapping class="com.nwnu.greencloud.domain.UserEntity"/>
     <mapping class="com.nwnu.greencloud.domain.VisualizationEntity"/>
       <mapping class="com.nwnu.greencloud.domain.AutomationEntity"/>
+      <mapping class="com.nwnu.greencloud.domain.FlowerEntity"/>
       <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
