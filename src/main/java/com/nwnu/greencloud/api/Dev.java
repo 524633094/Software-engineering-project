@@ -35,4 +35,13 @@ public class Dev {
 
         return new Reply(10010,"获取用户设备信息",devService.listDev(apiKey));
     }
+
+    @RequestMapping(value = "/user/dev/{apikey}/{devname}",method = RequestMethod.DELETE)
+    public Reply deleteDev(@PathVariable(value = "apikey") String apiKey,@PathVariable(value = "devname") String devName){
+        if (!devService.hasDev(apiKey,devName)){
+            return new Reply(20015,"无该设备");
+        }
+        boolean flag = devService.deleteDev(apiKey,devName);
+        return new Reply(10025,"删除设备",flag);
+    }
 }

@@ -9,7 +9,9 @@ import com.nwnu.greencloud.util.UuidUtil;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.UUID;
@@ -57,5 +59,21 @@ public class DevServiceImpl implements DevService {
     @Override
     public String getDevId(String apiKey, String devName) {
         return devRepository.findByDevNameAndApiKey(devName,apiKey).getId();
+    }
+
+    @Override
+    public Boolean hasDev(String apiKey, String devName) {
+        if(devRepository.findByDevNameAndApiKey(devName,apiKey) != null){
+            return true;
+        }
+        return false;
+    }
+
+    @Transactional
+    @Modifying
+    @Override
+    public Boolean deleteDev(String apikey, String devName) {
+        devRepository.deleteByApiKeyAndDevName(apikey,devName);
+        return true;
     }
 }

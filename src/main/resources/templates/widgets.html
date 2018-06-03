@@ -64,11 +64,11 @@
                     <th>传感器3</th>
                     <th>传感器4</th>
                     <th>传感器5</th>
-                    <th>更多信息</th>
+                    <th>操作</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr th:each="dev:${devlist}" >
+                  <tr th:each="dev,devstate:${devlist}" >
                     <td  th:text="${dev.devName}">
                       <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
                       树莓派
@@ -79,9 +79,10 @@
                     <td th:text="${dev.sensorFour}">3</td>
                     <td th:text="${dev.sensorFive}">3</td>
                     <td>
-                      <a href="#" class="text-muted">
-                        <i class="fa fa-search"></i>
-                      </a>
+                      <button type="button"  th:onclick="'javascript:delDev('+${dev.devName}+')'">删除设备</button>
+                      <!--<a href="#" class="text-muted">-->
+                        <!--<i class="fa fa-search"></i>-->
+                      <!--</a>-->
                     </td>
                   </tr>
                   </tbody>
@@ -185,7 +186,8 @@
 <script src="../page/layer/layer.js"></script>
 <script>
   var apiKey = document.getElementById("apikey").getAttribute("value");
-  var url = 'http://localhost:8888/api/dev/'+apiKey;
+  var addurl = 'http://localhost:8888/api/dev/'+apiKey;
+  var deletedevurl =  'http://localhost:8888/api/user/dev/'+apiKey+'/';
     function getdom(id) {
         return document.getElementById(id);
     }
@@ -200,7 +202,7 @@
         }
         $.ajax({
             method:'POST',
-            url:url,
+            url:addurl,
             dataType: 'json',
             contentType: 'application/json',
             data: JSON.stringify(data),
@@ -208,6 +210,25 @@
                 layer.alert(result.message)
             }
         })
+  }
+
+  function delDev(devname) {
+      layer.confirm('确定删除该设备？', {
+          btn: ['确定','取消'] //按钮
+      }, function(){
+          $.ajax({
+              url: deletedevurl+devname,
+              type: 'DELETE',
+              success: function(result) {
+                  layer.msg('删除成功', {icon: 1});
+              }
+          });
+      }, function(){
+          // layer.msg('也可以这样', {
+          //     time: 20000, //20s后自动关闭
+          //     btn: ['明白了', '知道了']
+          });
+
   }
 
 </script>
