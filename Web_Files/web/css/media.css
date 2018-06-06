@@ -1,0 +1,730 @@
+.phone,
+.second-pc,
+.third-pc,
+.fourth-pc,
+.fifth-pc,
+.footer-pc,
+.home-pc,
+.ai-banner,
+.why-pc,
+.platform-pc,
+.hezuo-pc,
+.ai-who-use-logo-pc{
+    display: block;
+}
+
+.second-mob,
+.third-mob,
+.fourth-mob,
+.fifth-mob,
+.foot-box,
+.home-mob,
+.ai-banner1,
+.why-mob,
+.platform-mob,
+.hezuo-mob,
+.ai-who-use-logo-mob{
+    display: none;
+}
+@media screen and (min-width: 750px){
+    .ai1:hover,
+    .ai2:hover,
+    .ai3:hover,
+    .ai4:hover,
+    .ai5:hover,
+    .ai6:hover {
+        margin-top: -0.2rem;
+    }
+
+
+    .ai1:hover span {
+        color: #e58282;
+        font-weight: bold;
+    }
+
+    .ai2:hover span {
+        color: #0b96d1;
+        font-weight: bold;
+    }
+
+    .ai3:hover span {
+        color: #8fba75;
+        font-weight: bold;
+    }
+
+    .ai4:hover span {
+        color: #ddc76d;
+        font-weight: bold;
+    }
+
+    .ai5:hover span {
+        color: #c487c8;
+        font-weight: bold;
+    }
+
+    .ai6:hover span {
+        color: #59c2c9;
+        font-weight: bold;
+    }
+    .ai1-bg:hover{
+        animation: ai1 0.5s linear forwards;
+        -moz-animation: ai1 0.5s linear forwards;
+        -webkit-animation: ai1 0.5s linear forwards;
+        -o-animation: ai1 0.5s linear forwards;
+    }
+    .ai2-bg:hover{
+        animation: ai2 0.5s linear forwards;
+        -moz-animation: ai2 0.5s linear forwards;
+        -webkit-animation: ai2 0.5s linear forwards;
+        -o-animation: ai2 0.5s linear forwards;
+    }
+    .ai3-bg:hover{
+        animation: ai3 0.5s linear forwards;
+        -moz-animation: ai3 0.5s linear forwards;
+        -webkit-animation: ai3 0.5s linear forwards;
+        -o-animation: ai3 0.5s linear forwards;
+    }
+    .ai4-bg:hover{
+        animation: ai4 0.5s linear forwards;
+        -moz-animation: ai4 0.5s linear forwards;
+        -webkit-animation: ai4 0.5s linear forwards;
+        -o-animation: ai4 0.5s linear forwards;
+    }
+    .ai5-bg:hover{
+        animation: ai5 0.5s linear forwards;
+        -moz-animation: ai5 0.5s linear forwards;
+        -webkit-animation: ai5 0.5s linear forwards;
+        -o-animation: ai5 0.5s linear forwards;
+    }
+    .ai6-bg:hover{
+        animation: ai6 0.5s linear forwards;
+        -moz-animation: ai6 0.5s linear forwards;
+        -webkit-animation: ai6 0.5s linear forwards;
+        -o-animation: ai6 0.5s linear forwards;
+    }
+}
+@media screen and (max-width: 960px) {
+    .service-span {
+        font-size: 0.24rem;
+        font-weight: bold;
+        color: white;
+        margin-top: -0.5rem;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .fourth-content p:nth-child(3) {
+        display: none;
+    }
+    .service-content {
+        height: 3.6rem;
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
+        line-height: 0.5rem;
+    }
+    #contact ul li:first-child+li+li+li,
+    #contact ul li:first-child+li+li+li+li {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 750px) {
+    .fourth-content .team_1 ul li{
+        line-height: 28px;
+    }
+    .fourth-content .team_2 ul li{
+        line-height: 28px;
+    }
+    .fourth-content .team_2 ul li.active{
+        line-height: 32px;
+    }
+    html {
+        font-size: 23.4375px;
+        background: #2e3132;
+        overflow-x: hidden;
+    }
+    .warp {
+        background: #f7f7f7;
+        width: 100%;
+        overflow: hidden;
+        padding-bottom: 1rem;
+    }
+    #top {
+        display: none;
+    }
+    .phone,
+    .second-pc,
+    .third-pc,
+    .fourth-pc,
+    .fifth-pc,
+    .footer-pc,
+    .home-pc,
+    .ai-banner,
+    .why-pc,
+    .platform-pc,
+    .hezuo-pc,
+    .ai-who-use-logo-pc {
+        display: none;
+    }
+    .second-mob,
+    .third-mob,
+    .fourth-mob,
+    .fifth-mob,
+    .foot-box,
+    .home-mob,
+    .ai-banner1,
+    .why-mob,
+    .platform-mob,
+    .hezuo-mob ,
+    .ai-who-use-logo-mob{
+        display: block;
+    }
+    .head,.page-head {
+        position: fixed;
+        height: 3rem;
+        background: #fff;
+        line-height: 3rem;
+        z-index: 3;
+        width: 100%;
+    }
+    .logo {
+        float: left;
+        width: 5rem;
+        padding: 0.5rem;
+    }
+    .logo img {
+        width: 100%;
+    }
+    .nav,.page-nav {
+        float: right;
+            width: 12rem;
+            margin-left: 0.5rem;
+            overflow: hidden;
+            padding-top: 1rem;
+            margin-right: 1rem;
+        }
+    .nav ul,.page-nav ul {
+        width: 100%;
+    }
+    .nav ul li,.page-nav ul li {
+        float: left;
+        display: block;
+        width: 16%;
+        font-size: 0.8rem;
+    }
+    .nav ul li a,.page-nav ul li a {
+        color: #333333;
+        height: 100%;
+        display: block;
+        float: left;
+        width: auto;
+    }
+    .nav-contact {
+        display: none;
+    }
+    #service,
+    #case,
+    #about,
+    #contact,
+    #myCarousel,
+    #home,
+    .hezuo-mob{
+        position: relative;
+        width: 100%;
+        padding: 0 0.5rem;
+        background: #f1f1f1;
+        overflow: hidden;
+    }
+
+    #home {
+        padding: 0;
+    }
+    #about{
+        margin-top:0;
+        overflow: initial;
+    }
+    #myCarousel {
+        padding: 3rem 0rem 0 0;
+    }
+    #case{
+        margin-top: -1rem;
+    }
+    .second-title{
+        text-align: center;
+        padding: 1rem 0;
+    }
+    .second-title h1,.hezuo-mob h1 {
+        font-size: 1.2rem;
+        color: #333333;
+        padding: 1rem 0;
+    }
+    .second-title span {
+        display: block;
+        margin-top: 0.25rem;
+        font-size: 0.6rem;
+        color: #999999;
+    }
+    .fourth-mob{
+        margin-top: -2rem;
+    }
+    .fourth-content{
+        width: 100%;
+        margin: 0;
+    }
+    .fourth-pc .fourth-content .team{
+        width: 100%;
+        float: none;
+        height: auto;
+        box-sizing: border-box;
+    }
+    .fourth-content .team .headimg {
+        padding-top: 15px;
+    }
+    .fourth-content .team .headimg img{
+        width: 7rem;
+    }
+    .fourth-pc .fourth-content .team_2{
+        margin-top: 10px;
+    }
+    .fourth-pc .third-content span{
+        font-size: 1.2rem;
+        padding: 1rem 0;
+    }
+    .fourth-content .team ul{
+        height: auto;
+        padding: 0 15px;
+        padding-bottom: 20px;
+    }
+    .fourth-content .team ul li{
+        font-size: 12px;
+        padding-left: 15px;
+    }
+    .fourth-content .team ul li.active{
+        font-size: 18px;
+        line-height: 30px;
+        margin-top: 0;
+    }
+    .fourth-content .team ul li.active_1{
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .fourth-content .team{
+        border-bottom: 0;
+        border: 1px solid #e8e8e8;
+    }
+    .fourth-content .team ul li.active span{
+        width: 13px;
+        height: 13px;
+        top: 10px;
+        left: -3px;
+    }
+    .fourth-content .team ul li.active b{
+        width: 9px;
+        height: 9px;
+        top: 12px;
+        left: -1px;
+    }
+    .fourth-content .team ul li b{
+        width: 7px;
+        height: 7px;
+        top:10px;
+    }
+    .fourth-content .team ul li i{
+        left: 3px;
+        top: 8px;
+    }
+    .layout-box {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: 100%;
+        position: relative;
+    }
+    .serive-box {
+        position: relative;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .service-img {
+        display: block;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        width: 100%;
+    }
+    .serive-content img {
+        vertical-align: middle;
+        width: 2rem;
+    }
+    .serive-content {
+        text-align: center;
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        /* padding: 0.3rem; */
+        position: absolute;
+        bottom: -0rem;
+        width: 100%;
+        z-index: 2;
+        height: 2.5rem;
+        line-height: 2.5rem;
+    }
+    .service1 {
+        background:rgba(214, 176, 61,0.75)
+    }
+    .service2 {
+        background: rgba(11, 150, 209,0.75);
+    }
+    .service3 {
+        background: rgba(220, 74, 74,0.75);
+    }
+    .service4 {
+        background: rgba(11, 150, 209,0.75);
+    }
+    .service5 {
+        background: rgba(59, 174, 118,0.75);
+    }
+    .serive-instruct {
+        text-align: center;
+        padding: 1rem 0;
+        color: #707070;
+        font-size: 0.7rem;
+        line-height: 1.5;
+        background: #fff;
+    }
+
+    .about-box {
+        background: #fff;
+        padding-bottom: 1rem;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .about-box h2 {
+        font-size: 1rem;
+        color: black;
+        display: block;
+        padding: 0.6rem;
+    }
+    .about-box p:nth-child(2) {
+        margin-top: 1rem;
+    }
+    .about-box p {
+        font-size: 0.7rem;
+        color: #666666;
+        display: block;
+        padding: 0 0.6rem;
+        text-indent: 1.4rem;
+        line-height: 2;
+    }
+    .position {
+        margin-top: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.5rem;
+        color: #060001;
+    }
+    #footer {
+        position: fixed;
+        z-index: 3;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+    }
+    .foot {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0.7rem 3.5rem 0.7rem;
+        color: #9a9a9a;
+        display: block;
+        line-height: 1.5;
+    }
+    .foot-box {
+        display: flex;
+        flex-direction: row;
+    }
+    .rexian {
+        width: 100%;
+        height: 3rem;
+        line-height: 3rem;
+        color: #fff;
+        font-size: 0.8rem;
+        text-align: center;
+        cursor: pointer;
+    }
+    .rexian a {
+        color: #fff;
+    }
+
+    .rexian img {
+        width: 1.5rem;
+        vertical-align: middle;
+    }
+    .rexian {
+        background: #dc4a4a;
+    }
+    .position-l,
+    .position-r {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        /* justify-content: center; */
+        align-items: center;
+        margin-top: 0.2rem;
+        margin-left:3.3rem;
+    }
+    .position-l img,
+    .position-r img {
+        width: 1.5rem;
+        height: 1.5rem;
+        vertical-align: middle;
+        margin-left: 0.1rem;
+    }
+    .position-l span,
+    .position-r span {
+        padding: 0.3rem 0.2rem;
+        font-size: 0.6rem;
+    }
+
+
+    .device {
+        width: 100%;
+        position: relative;
+    }
+
+    .swiper-container1 {
+        height: 12rem;
+        width: 100%;
+        position: relative;
+        background: #fff;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+    .swiper-slide1 {
+        width: 100%;
+        height: 12rem;
+        padding-bottom: 1rem;
+    }
+    .swiper-wrapper1 {
+        height: 12rem;
+    }
+
+    .pagination {
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+    .swiper-pagination-switch {
+        display: inline-block;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 0.5rem;
+        background: #999;
+        box-shadow: 0px 1px 2px #555 inset;
+        margin: 0 3px;
+        cursor: pointer;
+    }
+    .swiper-active-switch {
+        background: #fff;
+    }
+    .prodct-image {
+        float: left;
+        width: 50%;
+    }
+    .prodct-image img {
+        width: 100%;
+        padding-top: 1.5rem;
+    }
+    .prodct-content {
+        float: left;
+        width: 40%;
+        padding: 2rem 0 0 1rem;
+    }
+    .prodct-content span:first-child {
+        font-size: 0.8rem;
+        display: block;
+        color: black;
+        line-height: 1.2;
+    }
+    .time {
+        font-size: 0.6rem;
+        display: block;
+        color: #b1b1b1;
+        width: 100%;
+    }
+    .hr1 {
+        width: 1rem;
+        height: 0.1rem;
+        background: #d9d9d9;
+        margin: 0.4rem 0;
+        border: none;
+    }
+    .hr2 {
+        width: 1.5rem;
+        height: 0.1rem;
+        background: #d9d9d9;
+        margin: 0.4rem 0;
+        float: left;
+        border: none;
+    }
+    .hr3 {
+        width: 2rem;
+        height: 0.05rem;
+        background: #d9d9d9;
+        float: left;
+        border: none;
+        margin-top: 0.41rem;
+    }
+    .prodct-content p {
+        font-size: 0.6rem;
+        color: #666666;
+        line-height: 1.5;
+    }
+    /*page*/
+    .ai-banner1 {
+        padding-top: 3rem;
+        width: 100%;
+        position: relative;
+    }
+    .lang-cloud {
+        background: #fff;
+        padding-bottom: 1rem;
+    }
+    .lang-cloud h1 {
+        font-size: 1.1rem;
+        margin-top: 0;
+        padding-top: 1rem;
+    }
+    .yuyi {
+        font-size: 0.6rem;
+    }
+    .title {
+        font-size: 0.6rem;
+    }
+    .lang-cloud ul {
+        width: auto;
+    }
+    .lang-cloud ul li {
+        float: left;
+        width: 33.3%;
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    .ai1-bg,
+    .ai2-bg,
+    .ai3-bg,
+    .ai4-bg,
+    .ai5-bg,
+    .ai6-bg {
+        display: block;
+        margin-top: 0.4rem;
+        width: 4rem;
+        height: 5rem;
+        margin: 0 auto;
+    }
+    .why-l {
+        position: relative;
+    }
+    .why-analysis {
+        padding: 1.25rem 0.5rem;
+        position: relative;
+    }
+    .why-analysis img {
+        display: block;
+        width: 50%;
+        margin-top: 0;
+        margin-bottom: -1.25rem;
+        margin-right: 5rem;
+    }
+    .why-l {
+        width: 100%;
+        float: left;
+    }
+    .why-l h1 {
+        text-align: center;
+        font-size: 1.1rem;
+    }
+    .why-l p,
+    .why-l ul li {
+        font-size: 0.6rem;
+    }
+    .ltp-platform {
+        padding: 1.05rem 0.5rem;
+        background: #fff;
+    }
+    .ltp-platform img {
+        width: 80%;
+        height: 100%;
+        margin-left: 1.8rem;
+        margin-top: 1rem;
+    }
+    .ltp-r {
+        text-align: left;
+    }
+    .ltp-r h1,
+    .ltp-help h1,
+    .who-ltp h1 {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    .ltp-r span,
+    .ltp-help ul li,
+    .who-ltp span {
+        font-size: 0.6rem;
+    }
+    .ltp-r p {
+        font-size: 0.6rem;
+    }
+    .ltp-help {
+        padding: 1.3rem 0.5rem;
+
+    }
+    .ltp-help img {
+        position: relative;
+        width: 100%;
+        height: auto;
+        bottom: -1.25rem;
+    }
+    .who-ltp {
+        padding: 1rem 0.5rem 3rem 0.5rem;
+        background: #FFF;
+    }
+    .who-ltp ul li {
+        height: 2.4rem;
+        width: 20%;
+    }
+    .who-ltp ul li img {
+        width: 100%;
+            padding-top: 0.7rem;
+    }
+    .who-ltp span{
+        margin: 0.5rem 0;
+        line-height: 1.5;
+    }
+}
+
+.about-title-mobile{
+    font-size: 1.2rem;
+    display: block;
+    padding: 0.5rem;
+}
+.swiper-slide2 img{
+   width: 98%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+}
+.hezuo-mob-logo{
+  height: 4rem;
+  padding: 0 0.5rem;
+  background: #fff;
+  border-radius: 3px;
+}
+.hezuo-mob-ai{
+    border: 1px solid #e9e9e9;
+}
