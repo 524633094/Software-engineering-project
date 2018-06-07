@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1 style="text-align: center">实时温湿度图表</h1>
+<p id = "apikey"th:text="${apikey}" hidden></p>
+<p id="devname" th:text="${devname}" hidden></p>
+<div id="myChart" style="width: 100%;height:400px;"></div>
+</body>
+<script src="../../js/echarts.min.js"></script>
+<script src="../../js/jquery.js"></script>
+<script>
+    var apikey = document.getElementById('apikey').innerText;
+    var devname = document.getElementById('devname').innerText;
+    // $.get("http://192.168.1.130:8888/api/sensor/data/"+apikey+"/"+devname+"",function (result) {
+    //     //         console.log(apikey);
+    //     //         console.log(devname);
+    // })
+    option = {
+        title: {
+            text: '',
+            subtext: ''
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: '#283b56'
+                }
+            }
+        },
+        legend: {
+            data:['温度', '湿度']
+        },
+        toolbox: {
+            show: true,
+            feature: {
+                dataView: {readOnly: false},
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        dataZoom: {
+            show: false,
+            start: 0,
+            end: 100
+        },
+        xAxis: [
+            {
+                type: 'category',
+                boundaryGap: true,
+                data: (function (){
+                    var now = new Date();
+                    var res = [];
+                    var len = 10;
+                    while (len--) {
+                        res.unshift(now.toLocaleTimeString().replace(/^\D*/,''));
+                        now = new Date(now - 2000);
+                    }
+                    return res;
+                })()
+            },
+            {
+                type: 'category',
+                boundaryGap: true,
+                data: (function (){
+                    var res = [];
+                    var len = 10;
+                    while (len--) {
+                        res.push(10 - len - 1);
+                    }
+                    return res;
+                })()
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                scale: true,
+                name: '温度',
+                max: 50,
+                min: 0,
+                boundaryGap: [0.2, 0.2]
+            },
+            {
+                type: 'value',
+                scale: true,
+                name: '湿度',
+                max: 100,
+                min: 0,
+                boundaryGap: [0.2, 0.2]
+            }
+        ],
+        series: [
+            {
+                name:'湿度',
+                type:'bar',
+                xAxisIndex: 1,
+                yAxisIndex: 1,
+                data:(function (){
+                    var res = [];
+                    var len = 10;
+                     while (len--) {
+                         res.push(Math.round(Math.random() * 30));
+                     }
+                    return res;
+                })()
+            },
+            {
+                name:'温度',
+                type:'line',
+                data:(function (){
+                    var res = [];
+                    var len = 0;
+                    while (len < 10) {
+                         res.push((Math.random()*10 + 5).toFixed(1) - 0);
+                        len++;
+                    }
+                    return res;
+                })()
+            }
+        ]
+    };
+    var app = {
+        count:11
+    };
+    var myChart = echarts.init(document.getElementById('myChart'));
+    app.count = 11;
+    setInterval(function (){
+        $.get("http://123.207.124.113:8888/api/sensor/data/"+apikey+"/"+devname+"",function (result) {
+            console.log(apikey);
+            console.log(devname);
+            data = result;
+            console.log(data.list[0].sensorOne)
+            console.log(data.list[0].sensorTwo)
+            axisData = (new Date()).toLocaleTimeString().replace(/^\D*/,'');
+
+            var data0 = option.series[0].data;
+            var data1 = option.series[1].data;
+            data0.shift();
+            data0.push(data.list[0].sensorOne);
+            data1.shift();
+            data1.push(data.list[0].sensorTwo);
+
+            option.xAxis[0].data.shift();
+            option.xAxis[0].data.push(axisData);
+            option.xAxis[1].data.shift();
+            option.xAxis[1].data.push(app.count++);
+
+            myChart.setOption(option);
+        })
+    }, 2100);
+
+</script>
+</html>
