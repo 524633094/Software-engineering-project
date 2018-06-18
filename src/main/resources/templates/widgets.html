@@ -6,6 +6,7 @@
   <title>Green Cloud</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Access-Control-Allow-Origin" content="*" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -79,7 +80,7 @@
                     <td th:text="${dev.sensorFour}">3</td>
                     <td th:text="${dev.sensorFive}">3</td>
                     <td>
-                      <button type="button"  th:onclick="'javascript:delDev('+${dev.devName}+')'">删除设备</button>
+                      <button type="button"  th:onclick="'javascript:delDev(\''+${dev.devName}+'\')'">删除设备</button>
                       <!--<a href="#" class="text-muted">-->
                         <!--<i class="fa fa-search"></i>-->
                       <!--</a>-->
@@ -186,8 +187,8 @@
 <script src="../page/layer/layer.js"></script>
 <script>
   var apiKey = document.getElementById("apikey").getAttribute("value");
-  var addurl = 'http://localhost:8888/api/dev/'+apiKey;
-  var deletedevurl =  'http://localhost:8888/api/user/dev/'+apiKey+'/';
+  var addurl = 'http://123.207.124.113:8888/api/dev/'+apiKey;
+  var deletedevurl =  'http://123.207.124.113:8888/api/user/dev/'+apiKey+'/';
     function getdom(id) {
         return document.getElementById(id);
     }
@@ -212,7 +213,7 @@
         })
   }
 
-  function delDev(devname) {
+  var delDev = function (devname) {
       layer.confirm('确定删除该设备？', {
           btn: ['确定','取消'] //按钮
       }, function(){

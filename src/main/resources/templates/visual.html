@@ -130,30 +130,37 @@
     };
     var myChart = echarts.init(document.getElementById('myChart'));
     app.count = 11;
+    myChart.setOption(option);
     setInterval(function (){
-        $.get("http://123.207.124.113:8888/api/sensor/data/"+apikey+"/"+devname+"",function (result) {
-            console.log(apikey);
-            console.log(devname);
-            data = result;
-            console.log(data.list[0].sensorOne)
-            console.log(data.list[0].sensorTwo)
-            axisData = (new Date()).toLocaleTimeString().replace(/^\D*/,'');
+        $.ajax({
+            type: "GET",
+            url: "http://123.207.124.113:8888/api/sensor/data/" + apikey + "/" + devname + "",
+            dataType: "json",
+            success: function (result) {
+                console.log(apikey);
+                console.log(devname);
+                data = result;
+                console.log(data.list[0].sensorOne)
+                console.log(data.list[0].sensorTwo)
+                axisData = (new Date()).toLocaleTimeString().replace(/^\D*/,'');
 
-            var data0 = option.series[0].data;
-            var data1 = option.series[1].data;
-            data0.shift();
-            data0.push(data.list[0].sensorOne);
-            data1.shift();
-            data1.push(data.list[0].sensorTwo);
+                var data0 = option.series[0].data;
+                var data1 = option.series[1].data;
+                data0.shift();
+                data0.push(data.list[0].sensorOne);
+                data1.shift();
+                data1.push(data.list[0].sensorTwo);
 
-            option.xAxis[0].data.shift();
-            option.xAxis[0].data.push(axisData);
-            option.xAxis[1].data.shift();
-            option.xAxis[1].data.push(app.count++);
+                option.xAxis[0].data.shift();
+                option.xAxis[0].data.push(axisData);
+                option.xAxis[1].data.shift();
+                option.xAxis[1].data.push(app.count++);
 
-            myChart.setOption(option);
+                myChart.setOption(option);
+            }
         })
-    }, 2100);
+
+    }, 1500);
 
 </script>
 </html>
